@@ -10,7 +10,7 @@ def main():
     hf.check_input_args(sys.argv)
     path = "./" + "selma/"  # replace selma with sys.argv[]
     hf.check_text_files_exist(path)
-    hf.create_index_from_file(path, hf.get_files(path, "txt")[0])
+    hf.create_index_from_directory(path)
 
 
 if __name__ == "__main__":

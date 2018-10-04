@@ -46,3 +46,7 @@ def create_index_from_file(path, input_file):
         index_name = path + input_file.split('.')[0] + '_dict' + '.idx'
     pickle.dump(indexer_dict, open(index_name, "wb"))
 
+
+def create_index_from_directory(path):
+    for file in get_files(path, "txt"):
+        create_index_from_file(path, file)
