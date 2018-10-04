@@ -3,12 +3,7 @@
     and extract words from any txt-documents in it
 """
 import sys
-import re
-import pickle
 from assignment1 import helper_functions as hf
-
-
-WORD_REGEX = re.compile(r"[\w'-]+")
 
 
 def main():
@@ -20,15 +15,7 @@ def main():
     if len(files) == 0:
         print("No txt-files found. Exiting.")
         sys.exit()
-    indexer_dict = {}
-    with open(path + files[0], 'r') as file:
-        for word in WORD_REGEX.finditer(file.read(), re.IGNORECASE):
-            if word.group(0) in indexer_dict:
-                indexer_dict[word.group(0)].append(word.start())
-            else:
-                indexer_dict[word.group(0)] = [word.start()]
-        index_name = path + files[0].split('.')[0] + '_dict' + '.idx'
-    pickle.dump(indexer_dict, open(index_name, "wb"))
+    hf.create_index_from_file(path, files[0])
 
 
 if __name__ == "__main__":
