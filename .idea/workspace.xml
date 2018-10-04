@@ -36,14 +36,14 @@
         <counts>
           <entry key="Python Console" value="112" />
           <entry key="dummy" value="20" />
-          <entry key="py" value="5498" />
+          <entry key="py" value="5662" />
           <entry key="txt" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="5610" />
+          <entry key="Python" value="5774" />
         </counts>
       </usages-collector>
     </session>
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/indexer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="242">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
               <folding>
                 <element signature="e#104#114#0" expanded="true" />
               </folding>
@@ -65,12 +65,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment1/helper_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state relative-caret-position="-89">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1538666176558" expanded="true" signature="73:74" ph="..." />
-                <marker date="1538666176558" expanded="true" signature="461:917" ph="..." />
+                <marker date="1538666532357" expanded="true" signature="285:287" ph="..." />
+                <marker date="1538666532357" expanded="true" signature="822:1278" ph="..." />
               </folding>
             </state>
           </provider>
@@ -95,8 +95,8 @@
         <option value="$PROJECT_DIR$/Assignment_0/intro_scripts.py" />
         <option value="$PROJECT_DIR$/assignment4/conllx_reader.py" />
         <option value="$PROJECT_DIR$/assignment4/main.py" />
-        <option value="$PROJECT_DIR$/assignment1/indexer.py" />
         <option value="$PROJECT_DIR$/assignment1/helper_functions.py" />
+        <option value="$PROJECT_DIR$/assignment1/indexer.py" />
       </list>
     </option>
   </component>
@@ -308,8 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment1/indexer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="242">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="e#104#114#0" expanded="true" />
           </folding>
@@ -318,12 +318,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment1/helper_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        <state relative-caret-position="-89">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1538666176558" expanded="true" signature="73:74" ph="..." />
-            <marker date="1538666176558" expanded="true" signature="461:917" ph="..." />
+            <marker date="1538666532357" expanded="true" signature="285:287" ph="..." />
+            <marker date="1538666532357" expanded="true" signature="822:1278" ph="..." />
           </folding>
         </state>
       </provider>

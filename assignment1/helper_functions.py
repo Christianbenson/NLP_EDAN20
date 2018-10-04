@@ -1,12 +1,19 @@
 import os
 import re
 import pickle
+import sys
 
 
 WORD_REGEX = re.compile(r"[\w'-]+")
 
 
-def get_files(directory, suffix):
+def check_input_args(arguments):
+    if len(arguments) != 1:  # replace with 2 later on
+        print("Please specify one folder to read from. Example: 'python indexer.py selma' ")
+        sys.exit()
+
+
+def get_files(dir, suffix):
     """
     Returns all the files in a folder ending with suffix
     Author: Pierre Nugues
@@ -15,10 +22,17 @@ def get_files(directory, suffix):
     :return: the list of file names
     """
     files = []
-    for file in os.listdir(directory):
+    for file in os.listdir(dir):
         if file.endswith(suffix):
             files.append(file)
     return files
+
+
+def check_text_files_exist(path):
+    files = get_files(path, "txt")
+    if len(files) == 0:
+        print("No txt-files found. Exiting.")
+        sys.exit()
 
 
 def create_index_from_file(path, input_file):
