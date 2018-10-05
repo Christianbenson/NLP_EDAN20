@@ -50,3 +50,19 @@ def create_index_from_file(path, input_file):
 def create_index_from_directory(path):
     for file in get_files(path, "txt"):
         create_index_from_file(path, file)
+
+
+def merge_indices_in_directory(path):
+    merged_dict = {}
+    for file in get_files(path, "idx"):
+        print(path + file)
+        index = pickle.load(open(path + file, "rb"))
+        for key in index:
+            if key in merged_dict:
+                # append to dict
+                merged_dict[key][file.split('_')[0]] = index[key]
+            else:
+                # add key and append to its dict
+                merged_dict[key] = {file.split('_')[0]: index[key]}
+
+    print(merged_dict['samlar'])
