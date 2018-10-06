@@ -29,9 +29,9 @@ def get_files(dir, suffix):
 
 
 def check_text_files_exist(path):
-    files = get_files(path, "txt")
+    files = get_files(path, 'txt')
     if len(files) == 0:
-        print("No txt-files found. Exiting.")
+        print('No txt-files found. Exiting.')
         sys.exit()
 
 
@@ -44,25 +44,52 @@ def create_index_from_file(path, input_file):
             else:
                 indexer_dict[word.group(0)] = [word.start()]
         index_name = path + input_file.split('.')[0] + '_dict' + '.idx'
-    pickle.dump(indexer_dict, open(index_name, "wb"))
+    pickle.dump(indexer_dict, open(index_name, 'wb'))
 
 
 def create_index_from_directory(path):
-    for file in get_files(path, "txt"):
+    for file in get_files(path, 'txt'):
         create_index_from_file(path, file)
 
 
 def merge_indices_in_directory(path):
     merged_dict = {}
-    for file in get_files(path, "idx"):
-        print(path + file)
-        index = pickle.load(open(path + file, "rb"))
+    for file in get_files(path, 'idx'):
+        index = pickle.load(open(path + file, 'rb'))
         for key in index:
             if key in merged_dict:
-                # append to dict
                 merged_dict[key][file.split('_')[0]] = index[key]
             else:
-                # add key and append to its dict
                 merged_dict[key] = {file.split('_')[0]: index[key]}
+    delete_indices_in_directory(path)
+    index_name = path + 'merged_dict' + '.idx'
+    pickle.dump(merged_dict, open(index_name, 'wb'))
 
-    print(merged_dict['samlar'])
+
+def words_in_text(input_file):
+    with open(input_file, 'r') as file:
+        return len(file.read())
+
+
+def calc_and_dump_tf(path):
+    tf_dict = {}
+    merged_dict = get_files(path, 'merged_dict.idx')[0]
+    index = pickle.load(open(path + merged_dict, 'rb'))
+    for word in index:
+        for text in index[word]:
+            if word in tf_dict:
+                tf_dict[word][text] = len(index[word][text]) / words_in_text(path + text + '.txt')
+            else:
+                tf_dict[word] = {text: len(index[word][text]) / words_in_text(path + text + '.txt')}
+
+    tf_name = path + 'tf_dict' + '.csv'
+    pickle.dump(index, open(tf_name, 'wb'))
+
+
+def calc_and_dump_idf(path):
+    print('not finished')
+
+def delete_indices_in_directory(path):
+    for file in get_files(path, 'idx'):
+        os.remove(path + file)
+
